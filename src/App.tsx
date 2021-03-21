@@ -3,6 +3,14 @@ import { useState } from "react";
 import "./styles.css";
 import { Todo } from "./Todo";
 import { TodoType } from "./types/todo"
+import { Text } from "./Text"
+import { UserProfile } from "./UserProfile";
+import { User } from "./types/user";
+
+const user: User = {
+  name: "けいいち",
+  hobbies: ["ランニング", "自転車", "ラジコン", "ゲーム"],
+}
 
 // type TodoType = {
 //   userId: number;
@@ -25,6 +33,11 @@ export default function App() {
   };
   return (
     <div className="App">
+      <UserProfile user={user}/>
+      <Text color="red" fontSize="18px" />
+      {/* <Text color="red" fontSize="18px">
+        あああ
+      </Text> */}
       <button onClick={onClickFetchData}>データ取得</button>
       {todos.map((todo) => (
         // <p>{todo.title}</p>
